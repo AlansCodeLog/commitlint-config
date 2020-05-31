@@ -1,0 +1,47 @@
+{
+	"name": "@alanscodelog/commitlint-config",
+	"description": "My preferred commitlint config.",
+	"version": "0.0.0-semantically-released",
+	"main": "commitlint.config.js",
+	"scripts": {
+		"lint:commits": "npx commitlint --from $(git rev-parse --abbrev-ref --symbolic-full-name @{u}) --to HEAD"
+	},
+	"husky": {
+		"hooks": {
+			"pre-push": "npm run lint:commits"
+		}
+	},
+	"peerDependencies": {
+		"@alanscodelog/semantic-release-config": ">=1.0.0"
+	},
+	"devDependencies": {
+		"semantic-release": "latest",
+		"@semantic-release/changelog": "latest",
+		"@semantic-release/commit-analyzer": "latest",
+		"@semantic-release/github": "latest",
+		"@semantic-release/npm": "latest",
+		"@semantic-release/release-notes-generator": "latest",
+		"conventional-changelog-conventionalcommits": "latest",
+		"@alanscodelog/semantic-release-config": "^1.0.0",
+		"commitlint": "^8.3.5"
+	},
+	"author": "Alan <alanscodelog@gmail.com>",
+	"repository": "github:alanscodelog/my-commitlint-config",
+	"license": "MIT",
+	"files": [
+		"commitlint.config.js"
+	],
+	"release": { "extends": [ "@alanscodelog/semantic-release-config" ] },
+	"@comments": {
+		"peerDependencies": {
+			"@alanscodelog/semantic-release-config": "The commitlint types are extracted right from my semantic release config which is set as a peer dependency just in case the types change in a future version. This way the types will always match 100% with the types in the version of the config the project is using."
+		},
+		"scripts": {
+			"lint:commits": "The --from gets the last pushed commit, i.e. origin/branchname, so that commitlint doesn't lint old commits. If it happens to fail because the branch was never pushed, commitlint just lints all the commits anyways."
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
+
