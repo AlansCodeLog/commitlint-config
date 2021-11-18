@@ -19,7 +19,7 @@
 		"@semantic-release/release-notes-generator": "10.0.2",
 		"conventional-changelog-conventionalcommits": "4.6.1",
 		"@alanscodelog/semantic-release-config": "latest",
-		"commitlint": "14.1.0",
+		"commitlint": "15.0.0",
 		"husky": "^7.0.0"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
