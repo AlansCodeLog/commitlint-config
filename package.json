@@ -3,25 +3,26 @@
 	"description": "My preferred commitlint config.",
 	"version": "0.0.0-semantically-released",
 	"module": "commitlint.config.js",
-	"type":"module",
+	"type": "module",
 	"scripts": {
-		"lint:commits": "commitlint --from $(git rev-list HEAD --not --remotes | tail -1)^ --to HEAD --verbose",
-		"prepare": "husky install"
+		"lint:commits": "commitlint --from $(git rev-list --max-parents=0 HEAD) --to HEAD --verbose",
+		"prepare": "husky"
 	},
 	"peerDependencies": {
-		"@alanscodelog/semantic-release-config": "^2.0.0"
+		"@alanscodelog/semantic-release-config": "^4.0.0"
 	},
 	"devDependencies": {
-		"@alanscodelog/semantic-release-config": "^2.0.1",
-		"@semantic-release/changelog": "6.0.3",
-		"@semantic-release/commit-analyzer": "9.0.2",
-		"@semantic-release/github": "8.0.7",
-		"@semantic-release/npm": "10.0.3",
-		"@semantic-release/release-notes-generator": "11.0.1",
-		"commitlint": "17.6.1",
-		"conventional-changelog-conventionalcommits": "5.0.0",
-		"husky": "^8.0.3",
-		"semantic-release": "21.0.2"
+		"@alanscodelog/semantic-release-config": "^4.0.0",
+		"@commitlint/cli": "^19.3.0",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/commit-analyzer": "^12.0.0",
+		"@semantic-release/github": "^10.0.5",
+		"@semantic-release/npm": "^12.0.1",
+		"@semantic-release/release-notes-generator": "^13.0.0",
+		"commitlint": "^19.3.0",
+		"conventional-changelog-conventionalcommits": "^8.0.0",
+		"husky": "^9.0.11",
+		"semantic-release": "^23.1.1"
 	},
 	"author": "Alan <alanscodelog@gmail.com>",
 	"repository": "https://github.com/alanscodelog/my-commitlint-config",
@@ -29,8 +30,14 @@
 	"files": [
 		"commitlint.config.js"
 	],
-	"release": { "extends": [ "@alanscodelog/semantic-release-config" ] },
-	"engines": { "node": ">=18" },
+	"release": {
+		"extends": [
+			"@alanscodelog/semantic-release-config"
+		]
+	},
+	"engines": {
+		"node": ">=20"
+	},
 	"@comments": {
 		"peerDependencies": {
 			"@alanscodelog/semantic-release-config": "The commitlint types are extracted right from my semantic release config which is set as a peer dependency just in case the types change in a future version. This way the types will always match 100% with the types in the version of the config the project is using."

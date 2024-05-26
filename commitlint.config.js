@@ -1,10 +1,11 @@
-const semantic_release = require("@alanscodelog/semantic-release-config")
-let types = semantic_release.__types
+import  semantic_release from "@alanscodelog/semantic-release-config"
+const types = [ ...new Set( //dedupe
+	semantic_release.__types
 	.map(_ => _.type)
 	.filter(_ => _ !== undefined)
-types = [ ...new Set(types) ] // dedupe array
+) ]
 
-module.exports = {
+export default {
 	"rules": {
 		"header-max-length": [ 1, "always", 100 ],
 		"type-enum": [ 2, "always", types ],
