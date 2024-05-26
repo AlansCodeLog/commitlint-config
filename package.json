@@ -2,7 +2,7 @@
 	"name": "@alanscodelog/commitlint-config",
 	"description": "My preferred commitlint config.",
 	"version": "0.0.0-semantically-released",
-	"module": "commitlint.config.js",
+	"main": "commitlint.config.js",
 	"type": "module",
 	"scripts": {
 		"lint:commits": "commitlint --from $(git rev-list --max-parents=0 HEAD) --to HEAD --verbose",
