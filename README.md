@@ -1,4 +1,5 @@
-[![Release](https://github.com/alanscodelog/my-commitlint-config/workflows/Release/badge.svg)](https://www.npmjs.com/package/@alanscodelog/commitlint-config)
+[![Release](https://github.com/alanscodelog/my-commitlint-config/actions/workflows/release.yml/badge.svg)](https://github.com/alanscodelog/my-commitlint-config/actions/workflows/release.yml)
+[![NPM Version (with latest tag)](https://img.shields.io/npm/v/%40alanscodelog%2Fcommitlint-config/latest)](https://www.npmjs.com/package/@alanscodelog/commitlint-config/v/latest)
 
 My preferred commitlint config.
 
@@ -7,7 +8,7 @@ It matches the [`@commitlint/config-conventional`](https://www.npmjs.com/package
 
 # Install
 ```bash
-yarn add -D @alanscodelog/commitlint-config @alanscodelog/semantic-release-config
+pnpm add -D @alanscodelog/commitlint-config @alanscodelog/semantic-release-config
 ```
 
 ```json
