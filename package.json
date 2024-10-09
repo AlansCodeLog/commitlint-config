@@ -1,7 +1,7 @@
 {
 	"name": "@alanscodelog/commitlint-config",
 	"description": "My preferred commitlint config.",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"main": "commitlint.config.js",
 	"type": "module",
 	"scripts": {
