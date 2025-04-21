@@ -9,7 +9,7 @@
 		"prepare": "husky"
 	},
 	"peerDependencies": {
-		"@alanscodelog/semantic-release-config": "^5.0.1"
+		"@alanscodelog/semantic-release-config": "^5.0.4"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.3.0",
